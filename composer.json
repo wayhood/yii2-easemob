@@ -1,0 +1,21 @@
+{
+    "name": "wayhood/yii2-easemob",
+    "description": "easemob for yii2 ",
+    "type": "library",
+    "keywords": ["yii2","extension"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Song Yeung",
+            "email": "netyum@163.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "wh\\easemob\\": ""
+        }
+    }
+}
