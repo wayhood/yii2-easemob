@@ -25,6 +25,34 @@ class Component extends \yii\base\Component
 
 	private $_appName = '';
 
+    /**
+     * 发送文本信息
+     * @param $message
+     * @param $targets
+     * @return mixed
+     */
+    public function sendTextMessage($message, $targets)
+    {
+        $token = $this->getToken();
+
+        $headers = [
+            'Content-Type' => 'application/json',
+            'Authorization' => "Bearer $token"
+        ];
+
+        $body = [
+            'target_type' => "users",
+            'target' => $targets,
+            'msg' => [
+                'type' => "text",
+                "msg" => $message
+            ],
+            'form' => "ihaola"
+        ];
+
+        $result = $this->requestPost('messages', json_encode($body), $headers);
+        return @json_decode($result, true);
+    }
 
     /**
      * 注册用户
