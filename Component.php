@@ -44,10 +44,10 @@ class Component extends \yii\base\Component
             'target_type' => "users",
             'target' => $targets,
             'msg' => [
-                'type' => "text",
+                'type' => "txt",
                 "msg" => $message
             ],
-            'form' => "ihaola"
+            'from' => "ihaola"
         ];
 
         $result = $this->requestPost('messages', json_encode($body), $headers);
